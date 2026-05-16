@@ -24,12 +24,12 @@ export function About() {
   }
 
   return (
-    <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="about" className="relative border-t border-border py-32 md:py-40 px-4 sm:px-6 lg:px-8 bg-background">
       {/* Background accent */}
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
       <motion.div
-        className="relative z-10 space-y-12"
+        className="relative z-10 space-y-12 max-w-7xl mx-auto"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

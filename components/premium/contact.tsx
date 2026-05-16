@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export function PremiumContact() {
   return (
-    <section id="contact" className="py-20 md:py-32 px-4 bg-background">
+    <section id="contact" className="py-32 md:py-40 px-4 bg-card/10 border-t border-border">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
