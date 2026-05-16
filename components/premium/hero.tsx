@@ -14,7 +14,7 @@ export function PremiumHero() {
           <div className="space-y-6">
             <div className="inline-block">
               <span className="text-xs uppercase tracking-widest text-accent font-semibold px-3 py-1 bg-accent/10 rounded-full">
-                AI Design Studio
+                Product Designer & CX Consultant
               </span>
             </div>
 
