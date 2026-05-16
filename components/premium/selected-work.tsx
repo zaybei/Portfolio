@@ -86,7 +86,7 @@ export function SelectedWork() {
   ]
 
   return (
-    <section id="work" className="py-20 md:py-32 px-4 bg-background">
+    <section id="projects" className="py-20 md:py-32 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

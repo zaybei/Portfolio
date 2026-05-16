@@ -10,10 +10,11 @@ export function PremiumHeader() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const navLinks = [
-    { label: 'Work', href: '#work' },
-    { label: 'Philosophy', href: '#philosophy' },
-    { label: 'Lab', href: '#lab' },
     { label: 'About', href: '#about' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Contact', href: '#contact' },
   ]
 
   useEffect(() => {
