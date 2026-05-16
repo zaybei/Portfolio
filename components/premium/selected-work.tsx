@@ -61,26 +61,26 @@ export function SelectedWork() {
   const projects = [
     {
       title: 'BradyID',
-      description: 'Healthcare identification system redesign focusing on UX for medical professionals and patients.',
-      tags: ['Product Design', 'Healthcare', 'Systems Design'],
+      description: 'Industrial labeling and safety solutions platform. Redesigned user flows and dashboards for a global brand serving enterprise clients across manufacturing and logistics.',
+      tags: ['Enterprise Design', 'Industrial UX', 'Global Brand'],
       link: 'https://www.behance.net/abasyn',
     },
     {
       title: 'AAAM',
-      description: 'Association platform interface redesign with AI-powered member engagement features.',
-      tags: ['Platform Design', 'AI Integration', 'CX Strategy'],
+      description: 'The Association for the Advancement of Automotive Medicine platform redesign. Led corporate branding and digital experience strategy in collaboration with Dubai Rocket Marketing Agency.',
+      tags: ['Association Platform', 'Corporate Branding', 'Digital Strategy'],
       link: 'https://www.behance.net/abasyn',
     },
     {
       title: 'Furniture Instore',
-      description: 'E-commerce experience optimization combining AR visualization with intelligent recommendation engine.',
-      tags: ['E-Commerce', 'AR Technology', 'UX Research'],
+      description: 'UK-based furniture retail e-commerce platform. Leading AI strategy and product design to shape the digital experience, focusing on AR visualization and intelligent recommendations.',
+      tags: ['E-Commerce', 'AI Strategy', 'Retail UX'],
       link: 'https://www.behance.net/abasyn',
     },
     {
       title: 'IntelliDelve',
-      description: 'AI-powered data analytics platform with intuitive visualization and natural language interfaces.',
-      tags: ['SaaS Design', 'Data Visualization', 'AI UX'],
+      description: 'Background investigations and risk mitigation platform. Designed comprehensive SaaS dashboard with data visualization and intuitive workflows for enterprise users.',
+      tags: ['SaaS Design', 'Data Visualization', 'Enterprise'],
       link: 'https://www.behance.net/abasyn',
     },
   ]

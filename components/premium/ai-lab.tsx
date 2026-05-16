@@ -5,34 +5,49 @@ import { motion } from 'framer-motion'
 export function AILab() {
   const experiments = [
     {
-      title: 'Neural Design Systems',
-      description: 'AI-generated design system components that adapt to user behavior and context.',
+      title: 'AI-Powered Design Systems',
+      description: 'Automated design system generation using AI to create responsive, accessible components that adapt to user behavior.',
       icon: '🧠',
     },
     {
-      title: 'Predictive UX',
-      description: 'Machine learning models predicting user intent and optimizing interface proactively.',
+      title: 'Predictive UX Flows',
+      description: 'Machine learning models that anticipate user intent and optimize navigation pathways in real-time.',
       icon: '🔮',
     },
     {
       title: 'Voice-First Interfaces',
-      description: 'Natural language processing for conversational product design and accessibility.',
+      description: 'Natural language processing for conversational design, accessibility enhancements, and hands-free interaction.',
       icon: '🎤',
     },
     {
-      title: 'Sentiment Analysis',
-      description: 'Real-time UI adaptation based on user sentiment and emotional state detection.',
-      icon: '💭',
-    },
-    {
-      title: 'Generative Layouts',
-      description: 'AI-powered dynamic layouts that generate optimal information architecture on-demand.',
+      title: 'Smart Personalization',
+      description: 'AI-driven content adaptation that learns from user behavior to deliver hyper-personalized experiences.',
       icon: '✨',
     },
     {
-      title: 'Accessibility AI',
-      description: 'Intelligent assistive features that learn and adapt to individual accessibility needs.',
+      title: 'Automated Accessibility',
+      description: 'Intelligent assistive features that dynamically adjust interfaces based on individual accessibility requirements.',
       icon: '♿',
+    },
+    {
+      title: 'Data Visualization AI',
+      description: 'AI-generated visual representations that automatically translate complex datasets into intuitive, interactive dashboards.',
+      icon: '📊',
+    },
+    {
+      title: 'CX Intelligence',
+      description: 'AI analytics connecting user journeys to business outcomes, identifying optimization opportunities across touchpoints.',
+      icon: '🎯',
+    },
+    {
+      title: 'Design Token Automation',
+      description: 'Intelligent design token systems that evolve based on brand, user preferences, and accessibility standards.',
+      icon: '🔧',
+    },
+    {
+      title: 'Generative Prototyping',
+      description: 'Rapid prototyping using AI to generate design variations, interaction patterns, and interaction flows.',
+      icon: '⚡',
     },
   ]
 

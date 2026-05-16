@@ -5,28 +5,34 @@ import { motion } from 'framer-motion'
 export function ExperienceSnapshot() {
   const experiences = [
     {
-      year: '2023 - Present',
-      role: 'Lead Product Designer',
-      company: 'Self-Directed',
-      description: 'Designing AI-powered systems and consulting on enterprise UX strategy.',
-    },
-    {
-      year: '2021 - 2023',
-      role: 'Senior Product Designer',
-      company: 'Various Startups',
-      description: 'Led design transformation for multiple SaaS platforms and fintech solutions.',
-    },
-    {
-      year: '2018 - 2021',
+      year: '2022 - Present',
       role: 'Product Designer',
-      company: 'Tech Companies',
-      description: 'Designed consumer apps and platforms across healthcare, e-commerce, and logistics.',
+      company: 'Arhpez Technologies',
+      description: 'Leading design for Microsoft-oriented enterprises and B2B platforms, crafting end-to-end product experiences.',
     },
     {
-      year: '2016 - 2018',
-      role: 'UX/UI Designer',
-      company: 'First Role',
-      description: 'Started design career with foundational work in web and mobile applications.',
+      year: '2021 - 2022',
+      role: 'Sr. UX/UI Designer',
+      company: 'Troon Technologies',
+      description: 'Designed better UX for blockchain environment, DApps, and NFT marketplaces with Web3 integrations.',
+    },
+    {
+      year: '2018 - 2022',
+      role: 'Product Manager',
+      company: 'Tipping Point',
+      description: 'Oversaw product lifecycle, cross-functional collaboration, market research, and CX improvements.',
+    },
+    {
+      year: '2017 - 2018',
+      role: 'UI Designer',
+      company: 'Mob Inspire & Rockville Technologies',
+      description: 'Designed mobile applications, ride solutions, and healthcare scheduling apps for multiple startups.',
+    },
+    {
+      year: '2016 - 2017',
+      role: 'Social Media & Strategic Designer',
+      company: 'Telic Technologies & Abasyn University',
+      description: 'Built engaging campaigns, managed social media strategies, and developed brand awareness initiatives.',
     },
   ]
 
