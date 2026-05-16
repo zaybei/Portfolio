@@ -37,7 +37,7 @@ export function ExperienceSnapshot() {
   ]
 
   return (
-    <section id="experience" className="py-32 md:py-40 px-4 bg-card/20 border-t border-border/50">
+    <section id="experience" className="py-24 md:py-32 px-4 bg-card/15 border-t border-border/30 section-gradient-top">
       <div className="max-w-4xl mx-auto">
         {/* Section Heading with Left Accent */}
         <motion.div
@@ -45,14 +45,14 @@ export function ExperienceSnapshot() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex items-center gap-4 mb-16 md:mb-20"
+          className="flex items-center gap-4 mb-14 md:mb-16"
         >
-          <div className="w-1 h-12 bg-accent rounded-full" />
+          <div className="w-1 h-10 bg-gradient-to-b from-accent via-accent to-accent/40 rounded-full" />
           <h2 className="text-5xl md:text-6xl font-display font-bold text-foreground">Experience</h2>
         </motion.div>
 
         {/* Timeline */}
-        <div className="space-y-12">
+        <div className="space-y-10">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}

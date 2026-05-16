@@ -24,32 +24,33 @@ export function About() {
   }
 
   return (
-    <section id="about" className="relative border-t border-border py-32 md:py-40 px-4 sm:px-6 lg:px-8 bg-background">
-      {/* Background accent */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="about" className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-background border-t border-border/30 section-gradient-top">
+      {/* Decorative gradient elements */}
+      <div className="absolute -top-20 left-1/3 w-96 h-96 bg-accent/4 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-20 right-0 w-80 h-80 bg-accent/3 rounded-full blur-3xl pointer-events-none" />
 
       <motion.div
-        className="relative z-10 space-y-12 max-w-7xl mx-auto"
+        className="relative z-10 space-y-10 max-w-7xl mx-auto"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-100px' }}
       >
         {/* Section header */}
-        <motion.div className="space-y-4" variants={itemVariants}>
+        <motion.div className="space-y-3" variants={itemVariants}>
           <div className="flex items-center gap-3">
-            <div className="w-1 h-8 bg-accent rounded-full" />
+            <div className="w-1 h-10 bg-gradient-to-b from-accent via-accent to-accent/40 rounded-full" />
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground">
               About Me
             </h2>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-lg text-muted-foreground/90 max-w-2xl leading-relaxed">
             A product design leader with 9+ years of experience crafting human-centered digital experiences across diverse industries.
           </p>
         </motion.div>
 
         {/* Main content grid */}
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-14">
           {/* Left column */}
           <motion.div className="space-y-6" variants={itemVariants}>
             <div className="space-y-4">
@@ -102,7 +103,7 @@ export function About() {
 
         {/* Stats or highlights */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6"
           variants={itemVariants}
         >
           {[
@@ -111,11 +112,11 @@ export function About() {
             { label: 'Global Clients', value: '30+' },
             { label: 'Design Awards', value: '5' },
           ].map((stat, index) => (
-            <div key={index} className="p-4 bg-card/50 border border-border rounded-lg hover:border-accent/30 transition-colors">
-              <div className="text-2xl md:text-3xl font-bold text-accent mb-1">
+            <div key={index} className="p-4 bg-card/40 border border-border/50 rounded-lg hover:border-accent/50 hover:bg-card/60 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 group">
+              <div className="text-2xl md:text-3xl font-bold text-accent mb-1 group-hover:scale-110 transition-transform duration-300">
                 {stat.value}
               </div>
-              <div className="text-xs uppercase tracking-wide text-muted-foreground">
+              <div className="text-xs uppercase tracking-wide text-muted-foreground/70">
                 {stat.label}
               </div>
             </div>

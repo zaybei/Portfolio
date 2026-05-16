@@ -43,7 +43,7 @@ export function Skills() {
   }
 
   return (
-    <section id="skills" className="py-32 md:py-40 px-4 bg-background border-t border-border/50">
+    <section id="skills" className="py-24 md:py-32 px-4 bg-background border-t border-border/30 section-gradient-bottom">
       <div className="max-w-7xl mx-auto">
         {/* Section Heading with Left Accent */}
         <motion.div
@@ -51,9 +51,9 @@ export function Skills() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex items-center gap-4 mb-16 md:mb-20"
+          className="flex items-center gap-4 mb-14 md:mb-16"
         >
-          <div className="w-1 h-12 bg-accent rounded-full" />
+          <div className="w-1 h-10 bg-gradient-to-b from-accent via-accent to-accent/40 rounded-full" />
           <h2 className="text-5xl md:text-6xl font-display font-bold text-foreground">Skills & Tools</h2>
         </motion.div>
 
@@ -63,7 +63,7 @@ export function Skills() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14 lg:gap-16"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-14"
         >
           {skillCategories.map((category, index) => (
             <motion.div
@@ -79,8 +79,14 @@ export function Skills() {
               {/* Skills in Rows */}
               <div className="space-y-3">
                 {category.skills.map((skill) => (
-                  <div key={skill} className="text-foreground font-medium text-lg">
-                    {skill}
+                  <div
+                    key={skill}
+                    className="text-foreground font-medium text-base md:text-lg px-3 py-2 rounded-md bg-card/20 border border-border/30 hover:bg-card/40 hover:border-accent/30 hover:shadow-md hover:shadow-accent/5 transition-all duration-300 group cursor-default"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span>{skill}</span>
+                      <span className="text-accent/0 group-hover:text-accent/60 transition-colors duration-300">→</span>
+                    </div>
                   </div>
                 ))}
               </div>

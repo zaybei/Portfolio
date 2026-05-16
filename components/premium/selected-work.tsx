@@ -21,7 +21,7 @@ function ProjectCard({ title, description, image, tags, link }: ProjectCardProps
       className="group"
     >
       <a href={link} target="_blank" rel="noopener noreferrer" className="block h-full">
-        <div className="space-y-5 h-full flex flex-col">
+        <div className="space-y-4 h-full flex flex-col p-6 md:p-8 rounded-lg border border-border/40 bg-card/30 hover:bg-card/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
           {/* Project Title */}
           <div>
             <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground group-hover:text-accent transition-colors duration-300">
@@ -30,16 +30,16 @@ function ProjectCard({ title, description, image, tags, link }: ProjectCardProps
           </div>
 
           {/* Description */}
-          <p className="text-muted-foreground/80 text-lg leading-relaxed flex-grow">
+          <p className="text-muted-foreground/80 text-base md:text-lg leading-relaxed flex-grow">
             {description}
           </p>
 
           {/* Tags */}
-          <div className="flex flex-wrap gap-2 pt-4">
+          <div className="flex flex-wrap gap-2 pt-2">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="text-sm px-3 py-1.5 bg-accent/15 text-accent rounded-md border border-accent/30 group-hover:border-accent/60 group-hover:bg-accent/20 transition-all duration-300"
+                className="text-xs px-3 py-1.5 bg-accent/15 text-accent rounded-md border border-accent/30 hover:border-accent/60 hover:bg-accent/25 transition-all duration-300"
               >
                 {tag}
               </span>
@@ -80,7 +80,7 @@ export function SelectedWork() {
   ]
 
   return (
-    <section id="projects" className="py-32 md:py-40 px-4 bg-background border-t border-border">
+    <section id="projects" className="py-24 md:py-32 px-4 bg-background border-t border-border/30 section-gradient-bottom">
       <div className="max-w-7xl mx-auto">
         {/* Section Heading with Left Accent */}
         <motion.div
@@ -88,14 +88,14 @@ export function SelectedWork() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex items-center gap-4 mb-16 md:mb-20"
+          className="flex items-center gap-4 mb-14 md:mb-16"
         >
-          <div className="w-1 h-12 bg-accent rounded-full" />
+          <div className="w-1 h-10 bg-gradient-to-b from-accent via-accent to-accent/40 rounded-full" />
           <h2 className="text-5xl md:text-6xl font-display font-bold text-foreground">Featured Work</h2>
         </motion.div>
 
         {/* 2x2 Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-14">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
