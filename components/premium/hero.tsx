@@ -20,26 +20,26 @@ export function PremiumHero() {
           </div>
         </motion.div>
 
-        {/* Name */}
+        {/* Name - with gradient effect */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-center mb-6"
+          className="text-center mb-4"
         >
-          <h1 className="text-6xl md:text-7xl font-display font-black tracking-tight text-foreground">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-display font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-foreground to-foreground/80 leading-tight">
             Aftab Alam
           </h1>
         </motion.div>
 
-        {/* Title */}
+        {/* Title - with refined styling */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-center mb-8"
+          className="text-center mb-10"
         >
-          <p className="text-2xl md:text-3xl text-muted-foreground font-semibold tracking-wide">
+          <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground/90 font-medium tracking-wide">
             AI Product Designer & CX Consultant
           </p>
         </motion.div>
@@ -71,7 +71,7 @@ export function PremiumHero() {
           </p>
         </motion.div>
 
-        {/* CTA Buttons */}
+        {/* CTA Buttons - with better styling */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -80,13 +80,16 @@ export function PremiumHero() {
         >
           <a
             href="#projects"
-            className="px-8 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-all duration-300 inline-block shadow-lg hover:shadow-xl hover:shadow-accent/20"
+            className="group px-8 py-3 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 inline-block relative overflow-hidden"
           >
-            View My Work
+            <span className="relative z-10 flex items-center gap-2">
+              View My Work
+              <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </span>
           </a>
           <a
             href="mailto:alamabasyn@gmail.com"
-            className="px-8 py-3 border border-border text-foreground rounded-lg font-semibold hover:bg-card/50 transition-all duration-300 inline-block"
+            className="group px-8 py-3 border-2 border-border text-foreground rounded-lg font-semibold hover:border-accent/50 hover:bg-card/50 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300 inline-block"
           >
             Get in Touch
           </a>

@@ -1,83 +1,58 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
-interface ProjectCardProps {
-  title: string
-  description: string
-  image?: string
-  tags: string[]
-  link?: string
-}
-
-function ProjectCard({ title, description, image, tags, link }: ProjectCardProps) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true, margin: '-100px' }}
-      className="group"
-    >
-      <a href={link} target="_blank" rel="noopener noreferrer" className="block h-full">
-        <div className="space-y-4 h-full flex flex-col p-6 md:p-8 rounded-lg border border-border/40 bg-card/30 hover:bg-card/50 hover:border-accent/40 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5">
-          {/* Project Title */}
-          <div>
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground group-hover:text-accent transition-colors duration-300">
-              {title}
-            </h3>
-          </div>
-
-          {/* Description */}
-          <p className="text-muted-foreground/80 text-base md:text-lg leading-relaxed flex-grow">
-            {description}
-          </p>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 pt-2">
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs px-3 py-1.5 bg-accent/15 text-accent rounded-md border border-accent/30 hover:border-accent/60 hover:bg-accent/25 transition-all duration-300"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </a>
-    </motion.div>
-  )
-}
+const projects = [
+  {
+    title: 'BradyID',
+    description: 'Industrial labeling and safety solutions platform. Redesigned user flows and dashboards for a global brand.',
+    tags: ['Enterprise Design', 'Industrial UX', 'Global Brand'],
+    link: 'https://www.behance.net/abasyn',
+    size: 'large',
+  },
+  {
+    title: 'AAAM',
+    description: 'Association platform redesign. Led corporate branding and digital experience strategy.',
+    tags: ['Corporate Branding', 'Digital Strategy'],
+    link: 'https://www.behance.net/abasyn',
+    size: 'small',
+  },
+  {
+    title: 'Furniture Instore',
+    description: 'UK-based furniture retail e-commerce. Leading AI strategy and product design.',
+    tags: ['E-Commerce', 'AI Strategy'],
+    link: 'https://www.behance.net/abasyn',
+    size: 'small',
+  },
+  {
+    title: 'IntelliDelve',
+    description: 'Background investigations platform. Designed comprehensive SaaS dashboard with data visualization.',
+    tags: ['SaaS Design', 'Data Visualization'],
+    link: 'https://www.behance.net/abasyn',
+    size: 'large',
+  },
+]
 
 export function SelectedWork() {
-  const projects = [
-    {
-      title: 'BradyID',
-      description: 'Industrial labeling and safety solutions platform. Redesigned user flows and dashboards for a global brand serving enterprise clients across manufacturing and logistics.',
-      tags: ['Enterprise Design', 'Industrial UX', 'Global Brand'],
-      link: 'https://www.behance.net/abasyn',
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
     },
-    {
-      title: 'AAAM',
-      description: 'The Association for the Advancement of Automotive Medicine platform redesign. Led corporate branding and digital experience strategy in collaboration with Dubai Rocket Marketing Agency.',
-      tags: ['Association Platform', 'Corporate Branding', 'Digital Strategy'],
-      link: 'https://www.behance.net/abasyn',
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' },
     },
-    {
-      title: 'Furniture Instore',
-      description: 'UK-based furniture retail e-commerce platform. Leading AI strategy and product design to shape the digital experience, focusing on AR visualization and intelligent recommendations.',
-      tags: ['E-Commerce', 'AI Strategy', 'Retail UX'],
-      link: 'https://www.behance.net/abasyn',
-    },
-    {
-      title: 'IntelliDelve',
-      description: 'Background investigations and risk mitigation platform. Designed comprehensive SaaS dashboard with data visualization and intuitive workflows for enterprise users.',
-      tags: ['SaaS Design', 'Data Visualization', 'Enterprise'],
-      link: 'https://www.behance.net/abasyn',
-    },
-  ]
+  }
 
   return (
     <section id="projects" className="py-24 md:py-32 px-4 bg-background border-t border-border/30 section-gradient-bottom">
@@ -88,18 +63,75 @@ export function SelectedWork() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex items-center gap-4 mb-14 md:mb-16"
+          className="flex items-center gap-4 mb-16"
         >
           <div className="w-1 h-10 bg-gradient-to-b from-accent via-accent to-accent/40 rounded-full" />
           <h2 className="text-5xl md:text-6xl font-display font-bold text-foreground">Featured Work</h2>
         </motion.div>
 
-        {/* 2x2 Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-14">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
-          ))}
-        </div>
+        {/* Bento Grid Layout - Modern asymmetric design inspired by Awwwards winners */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-100px' }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-[300px] md:auto-rows-[280px]"
+        >
+          {projects.map((project, idx) => {
+            const isLarge = project.size === 'large'
+            const colSpan = isLarge ? 'md:col-span-2' : 'md:col-span-1'
+            const rowSpan = isLarge ? 'md:row-span-2' : 'md:row-span-1'
+
+            return (
+              <motion.a
+                key={idx}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                variants={itemVariants}
+                className={`group relative overflow-hidden rounded-2xl border border-border/40 bg-gradient-to-br from-card/70 via-card/50 to-card/30 backdrop-blur-lg hover:border-accent/50 transition-all duration-500 p-6 md:p-7 flex flex-col justify-between cursor-pointer ${colSpan} ${rowSpan}`}
+                whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(96, 165, 250, 0.1)' }}
+              >
+                {/* Animated gradient overlay - appears on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none bg-gradient-to-t from-accent/8 via-transparent to-transparent" />
+
+                {/* Floating accent element */}
+                <div className="absolute -top-32 -right-32 w-64 h-64 bg-accent/4 rounded-full blur-3xl group-hover:bg-accent/6 transition-all duration-500 pointer-events-none" />
+
+                {/* Content */}
+                <div className="relative z-10 space-y-3">
+                  <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground group-hover:text-accent transition-colors duration-300 line-clamp-2">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-muted-foreground/75 text-sm md:text-base leading-relaxed line-clamp-2 md:group-hover:line-clamp-3 transition-all duration-300">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Footer - Tags and CTA */}
+                <div className="relative z-10 space-y-3 pt-2">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.slice(0, 2).map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-2.5 py-1 bg-accent/12 text-accent/90 rounded-full border border-accent/25 group-hover:border-accent/50 group-hover:bg-accent/20 transition-all duration-300 backdrop-blur-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Arrow indicator */}
+                  <div className="flex items-center gap-2 text-accent opacity-0 group-hover:opacity-100 transform group-hover:translate-x-0.5 transition-all duration-300">
+                    <span className="text-xs font-semibold uppercase tracking-wide">Explore</span>
+                    <span>→</span>
+                  </div>
+                </div>
+              </motion.a>
+            )
+          })}
+        </motion.div>
       </div>
     </section>
   )

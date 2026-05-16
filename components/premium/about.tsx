@@ -101,9 +101,9 @@ export function About() {
           </motion.div>
         </div>
 
-        {/* Stats or highlights */}
+        {/* Stats or highlights - enhanced with better styling */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8"
           variants={itemVariants}
         >
           {[
@@ -112,14 +112,18 @@ export function About() {
             { label: 'Global Clients', value: '30+' },
             { label: 'Design Awards', value: '5' },
           ].map((stat, index) => (
-            <div key={index} className="p-4 bg-card/40 border border-border/50 rounded-lg hover:border-accent/50 hover:bg-card/60 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 group">
-              <div className="text-2xl md:text-3xl font-bold text-accent mb-1 group-hover:scale-110 transition-transform duration-300">
+            <motion.div
+              key={index}
+              whileHover={{ y: -4 }}
+              className="p-5 md:p-6 bg-gradient-to-br from-card/50 to-card/20 border border-border/40 rounded-xl hover:border-accent/40 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300 group cursor-default backdrop-blur-sm"
+            >
+              <div className="text-3xl md:text-4xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform duration-300">
                 {stat.value}
               </div>
-              <div className="text-xs uppercase tracking-wide text-muted-foreground/70">
+              <div className="text-xs uppercase tracking-widest text-muted-foreground/70 font-medium">
                 {stat.label}
               </div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </motion.div>
