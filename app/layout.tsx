@@ -16,12 +16,12 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: 'Aftab Alam | AI Product Designer & CX Consultant',
-  description: '9+ years of experience in Product Design, CX Strategy, and AI-powered workflows. Leading design for brands across Pakistan, UK, and beyond.',
-  keywords: ['Product Designer', 'UX Designer', 'UI Designer', 'Product Manager', 'Pakistan', 'Figma', 'Web3', 'SaaS'],
+  description: 'Designing systems for the AI era. AI Product Designer and CX Consultant crafting intelligent interfaces and data-driven experiences since 2016.',
+  keywords: ['Product Designer', 'UX Designer', 'AI Design', 'CX Consultant', 'Pakistan'],
   authors: [{ name: 'Aftab Alam' }],
   openGraph: {
     title: 'Aftab Alam | AI Product Designer & CX Consultant',
-    description: '9+ years of experience in Product Design, CX Strategy, and AI-powered workflows.',
+    description: 'Designing systems for the AI era. Crafting intelligent interfaces and data-driven experiences.',
     type: 'website',
   },
 }
@@ -36,7 +36,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased bg-background`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >

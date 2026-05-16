@@ -1,25 +1,23 @@
-import { Header } from "@/components/portfolio/header"
-import { Hero } from "@/components/portfolio/hero"
-import { About } from "@/components/portfolio/about"
-import { Experience } from "@/components/portfolio/experience"
-import { Projects } from "@/components/portfolio/projects"
-import { Skills } from "@/components/portfolio/skills"
-import { Contact } from "@/components/portfolio/contact"
-import { Footer } from "@/components/portfolio/footer"
+import { PremiumHeader } from '@/components/premium/header'
+import { PremiumHero } from '@/components/premium/hero'
+import { SelectedWork } from '@/components/premium/selected-work'
+import { AILab } from '@/components/premium/ai-lab'
+import { Philosophy } from '@/components/premium/philosophy'
+import { ExperienceSnapshot } from '@/components/premium/experience'
+import { PremiumContact } from '@/components/premium/contact'
+import { PremiumFooter } from '@/components/premium/footer'
 
-export default function PortfolioPage() {
+export default function Home() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Skills />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen bg-background text-foreground">
+      <PremiumHeader />
+      <PremiumHero />
+      <SelectedWork />
+      <AILab />
+      <Philosophy />
+      <ExperienceSnapshot />
+      <PremiumContact />
+      <PremiumFooter />
+    </main>
   )
 }
