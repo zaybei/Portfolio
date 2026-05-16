@@ -18,38 +18,32 @@ function ProjectCard({ title, description, image, tags, link }: ProjectCardProps
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true, margin: '-100px' }}
-      className="group cursor-pointer"
+      className="group"
     >
-      <a href={link} target="_blank" rel="noopener noreferrer" className="block">
-        <div className="space-y-4">
-          {image && (
-            <div className="relative h-64 md:h-80 bg-card rounded-lg overflow-hidden border border-border/50 group-hover:border-accent/30 transition-colors">
-              <Image
-                src={image}
-                alt={title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          )}
-          <div className="space-y-2">
-            <h3 className="text-xl md:text-2xl font-display font-bold group-hover:text-accent transition-colors">
+      <a href={link} target="_blank" rel="noopener noreferrer" className="block h-full">
+        <div className="space-y-5 h-full flex flex-col">
+          {/* Project Title */}
+          <div>
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground group-hover:text-accent transition-colors duration-300">
               {title}
             </h3>
-            <p className="text-muted-foreground line-clamp-2">
-              {description}
-            </p>
-            <div className="flex flex-wrap gap-2 pt-2">
-              {tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs px-2 py-1 bg-accent/10 text-accent rounded border border-accent/20"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+          </div>
+
+          {/* Description */}
+          <p className="text-muted-foreground/80 text-lg leading-relaxed flex-grow">
+            {description}
+          </p>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 pt-4">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-sm px-3 py-1.5 bg-accent/15 text-accent rounded-md border border-accent/30 group-hover:border-accent/60 group-hover:bg-accent/20 transition-all duration-300"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </a>
@@ -88,20 +82,20 @@ export function SelectedWork() {
   return (
     <section id="projects" className="py-32 md:py-40 px-4 bg-background border-t border-border">
       <div className="max-w-7xl mx-auto">
+        {/* Section Heading with Left Accent */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-16 md:mb-24"
+          className="flex items-center gap-4 mb-16 md:mb-20"
         >
-          <span className="text-xs uppercase tracking-widest text-accent font-semibold">Selected Work</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mt-4 max-w-2xl">
-            Case Studies &amp; Projects
-          </h2>
+          <div className="w-1 h-12 bg-accent rounded-full" />
+          <h2 className="text-5xl md:text-6xl font-display font-bold text-foreground">Featured Work</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+        {/* 2x2 Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14 lg:gap-16">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
